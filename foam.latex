@@ -3,7 +3,7 @@
 
 % PREAMBLE ----------------------
 
-% Layout and margins
+% Define layout and margins
 \documentclass{article}
 \usepackage[a4paper,total={6in,8in}]{geometry}
 
@@ -23,7 +23,7 @@ $endif$
 % Use sans serif font
 \renewcommand{\familydefault}{\sfdefault}
 
-% Coloure headers
+% Colour headers
 \usepackage{titlesec}
 \titleformat*{\section}{\normalfont\Large\bfseries\color{teal}}
 \titleformat*{\subsection}{\normalfont\large\bfseries\color{teal}}
@@ -39,13 +39,13 @@ $endif$
   urlcolor = blue,
 }
 
-% Format date
+% Format dates
 \usepackage{datetime2}
 
 % Allow header formatting
 \usepackage{fancyhdr}
 
-% Color page header
+% Colour page header
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\f@nch@head}{\rlap}{\color{gray}\rlap}{}{}
@@ -56,7 +56,7 @@ $endif$
 \usepackage{longtable}
 \usepackage{booktabs}
 
-% Maths rendering
+% Render maths
 \usepackage{amsmath,amssymb}
 
 % Handle images
@@ -92,8 +92,8 @@ $endif$
 \definecolor{listing-numbers}{HTML}{B3B2B3}
 \definecolor{listing-text-color}{HTML}{000000}
 \definecolor{listing-keyword}{HTML}{435489}
-\definecolor{listing-keyword-2}{HTML}{1284CA} % additional keywords
-\definecolor{listing-keyword-3}{HTML}{9137CB} % additional keywords
+\definecolor{listing-keyword-2}{HTML}{1284CA}
+\definecolor{listing-keyword-3}{HTML}{9137CB}
 \definecolor{listing-identifier}{HTML}{435489}
 \definecolor{listing-string}{HTML}{00999A}
 \definecolor{listing-comment}{HTML}{8E8E8E}
