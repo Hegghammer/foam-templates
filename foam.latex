@@ -1,5 +1,5 @@
 % Very simple Pandoc LaTeX template for use with Foam.
-% If you want a name in the header, specify an `author` in YAML.
+% If you want a name in the header, specify an `author` in the note YAML.
 
 % PREAMBLE ----------------------
 
@@ -15,16 +15,19 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+\newcommand{\passthrough}[1]{#1}
+
 % Remove section numbering
 \setcounter{secnumdepth}{0}
 
-% Sans serif font
+% Use sans serif font
 \renewcommand{\familydefault}{\sfdefault}
 
-\usepackage{xcolor}
-\usepackage{sectsty}
-\sectionfont{\color{teal}} 
-\subsectionfont{\color{teal}} 
+% Coloure headers
+\usepackage{titlesec}
+\titleformat*{\section}{\normalfont\Large\bfseries\color{teal}}
+\titleformat*{\subsection}{\normalfont\large\bfseries\color{teal}}
+\titleformat*{\subsubsection}{\normalfont\normalsize\bfseries\color{teal}}
 
 % Remove indentation
 \setlength{\parindent}{0cm}
@@ -42,7 +45,7 @@ $endif$
 % Allow header formatting
 \usepackage{fancyhdr}
 
-% Color header
+% Color page header
 \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\f@nch@head}{\rlap}{\color{gray}\rlap}{}{}
@@ -79,8 +82,10 @@ $if(svg)$
 \usepackage{svg}
 $endif$
 
-% listings -- adapted from Eisvogel
+% Format listings -- adapted from Eisvogel
 \usepackage{listings}
+\usepackage{courier}
+\usepackage{xcolor}
 
 \definecolor{listing-background}{HTML}{F7F7F7}
 \definecolor{listing-rule}{HTML}{B3B2B3}
@@ -98,7 +103,7 @@ $endif$
   xleftmargin      = 2.7em,
   framexleftmargin = 2.5em,
   backgroundcolor  = \color{listing-background},
-  basicstyle       = \color{listing-text-color}\linespread{1.0}\small\ttfamily{},
+  basicstyle       = \color{listing-text-color}\small\ttfamily{},
   breaklines       = true,
   frame            = single,
   framesep         = 0.19em,
@@ -107,7 +112,7 @@ $endif$
   tabsize          = 4,
   numberstyle      = \color{listing-numbers},
   aboveskip        = 1.0em,
-  belowskip        = 1.0em,
+  belowskip        = 0.5em,
   abovecaptionskip = 0em,
   belowcaptionskip = 1.0em,
   keywordstyle     = {\color{listing-keyword}\bfseries},
